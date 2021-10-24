@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Cargo_Distributed_System
@@ -15,7 +12,7 @@ namespace Cargo_Distributed_System
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new DeliveryAdressScreenForm());
-
+            Application.Exit();
         }
     }
 }
