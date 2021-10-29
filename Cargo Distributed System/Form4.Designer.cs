@@ -38,6 +38,10 @@ namespace Cargo_Distributed_System
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeliveryAdressScreenForm));
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.gmap = new GMap.NET.WindowsForms.GMapControl();
+            this.insertAddressButton = new System.Windows.Forms.Button();
+            this.AddressInputBox = new System.Windows.Forms.TextBox();
+            this.addressLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // splitter1
@@ -76,7 +80,47 @@ namespace Cargo_Distributed_System
             this.gmap.Size = new System.Drawing.Size(503, 536);
             this.gmap.TabIndex = 2;
             this.gmap.Zoom = 10D;
-            this.gmap.Load += new System.EventHandler(this.gMapControl1_Load);
+            this.gmap.Load += new System.EventHandler(this.GMapControl1_Load);
+            this.gmap.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Gmap_MouseClick);
+            // 
+            // insertAddressButton
+            // 
+            this.insertAddressButton.Location = new System.Drawing.Point(667, 162);
+            this.insertAddressButton.Name = "insertAddressButton";
+            this.insertAddressButton.Size = new System.Drawing.Size(123, 23);
+            this.insertAddressButton.TabIndex = 3;
+            this.insertAddressButton.Text = "Insert Address";
+            this.insertAddressButton.UseVisualStyleBackColor = true;
+            this.insertAddressButton.Click += new System.EventHandler(this.InsertAddressButton_Click);
+            // 
+            // AddressInputBox
+            // 
+            this.AddressInputBox.Location = new System.Drawing.Point(522, 25);
+            this.AddressInputBox.Multiline = true;
+            this.AddressInputBox.Name = "AddressInputBox";
+            this.AddressInputBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.AddressInputBox.Size = new System.Drawing.Size(268, 131);
+            this.AddressInputBox.TabIndex = 4;
+            this.AddressInputBox.TextChanged += new System.EventHandler(this.AddressInputBox_TextChanged);
+            // 
+            // addressLabel
+            // 
+            this.addressLabel.AutoSize = true;
+            this.addressLabel.Location = new System.Drawing.Point(519, 9);
+            this.addressLabel.Name = "addressLabel";
+            this.addressLabel.Size = new System.Drawing.Size(45, 13);
+            this.addressLabel.TabIndex = 5;
+            this.addressLabel.Text = "Address";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(522, 162);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(139, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Calculate Shorthest Path";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.CalculateShorthestPathButton);
             // 
             // DeliveryAdressScreenForm
             // 
@@ -84,6 +128,10 @@ namespace Cargo_Distributed_System
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(802, 536);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.addressLabel);
+            this.Controls.Add(this.AddressInputBox);
+            this.Controls.Add(this.insertAddressButton);
             this.Controls.Add(this.gmap);
             this.Controls.Add(this.splitter1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -92,6 +140,7 @@ namespace Cargo_Distributed_System
             this.Text = "Delivery Address Screen";
             this.Load += new System.EventHandler(this.Form4_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -99,5 +148,9 @@ namespace Cargo_Distributed_System
 
         private System.Windows.Forms.Splitter splitter1;
         private GMap.NET.WindowsForms.GMapControl gmap;
+        private System.Windows.Forms.Button insertAddressButton;
+        private System.Windows.Forms.TextBox AddressInputBox;
+        private System.Windows.Forms.Label addressLabel;
+        private System.Windows.Forms.Button button1;
     }
 }
