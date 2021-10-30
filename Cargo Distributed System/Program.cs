@@ -2,6 +2,7 @@
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -12,6 +13,10 @@ namespace Cargo_Distributed_System
         public static DistanceCalculator DistanceCalculator = new DistanceCalculator();
         public static GMapOverlay MarkerOverlay = new GMapOverlay("markers");
         public static GMapOverlay RouteOverlay = new GMapOverlay("routes");
+        public static TSPCalculator tspCalculator = new TSPCalculator();
+
+        public static List<PointLatLng> Points { get; internal set; } = new List<PointLatLng>();
+
         //public static GMapRoute TestRoute;
         [STAThread]
         static void Main()
@@ -31,15 +36,18 @@ namespace Cargo_Distributed_System
             Application.Exit();
         }
 
-        static void AddPoint(PointLatLng point)
+        public static void AddPoint(PointLatLng point)
         {
             DistanceCalculator.AddPoint(point);
+            Points.Add(point);
             MarkerOverlay.Markers.Add(new GMarkerGoogle(point, GMarkerGoogleType.red_small));
         }
-        static void AddBasePoint(PointLatLng point)
+        public static void AddBasePoint(PointLatLng point)
         {
             DistanceCalculator.BaseOfOperations = point;
             DistanceCalculator.AddPoint(point);
+            Points.Add(point);
+            tspCalculator.start = point;
             MarkerOverlay.Markers.Add(new GMarkerGoogle(point, GMarkerGoogleType.red_small));
         }
     }

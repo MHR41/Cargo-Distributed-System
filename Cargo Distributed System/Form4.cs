@@ -55,8 +55,7 @@ namespace Cargo_Distributed_System
                 MessageBox.Show($"Couldn't add address status: {status}");
                 return;
             }
-            Program.DistanceCalculator.AddPoint((PointLatLng)point);
-            Program.MarkerOverlay.Markers.Add(new GMarkerGoogle((PointLatLng)point, GMarkerGoogleType.red_small));
+            Program.AddPoint((PointLatLng)point);
         }
 
         private void Gmap_MouseClick(object sender, MouseEventArgs e)
@@ -65,8 +64,7 @@ namespace Cargo_Distributed_System
             if (e.Button == MouseButtons.Right)
             {
                 var point = gmap.FromLocalToLatLng(e.X, e.Y);
-                Program.DistanceCalculator.AddPoint(point);
-                Program.MarkerOverlay.Markers.Add(new GMarkerGoogle(point, GMarkerGoogleType.red_small));
+                Program.AddPoint(point);
             }
         }
 
@@ -77,7 +75,7 @@ namespace Cargo_Distributed_System
 
         private void CalculateShorthestPathButton(object sender, EventArgs e)
         {
-            Program.DistanceCalculator.Resume();
+            Program.tspCalculator.Resume();
         }
     }
 }
