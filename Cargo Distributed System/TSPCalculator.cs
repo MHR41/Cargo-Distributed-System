@@ -69,6 +69,7 @@ namespace Cargo_Distributed_System
             Route = new GMapRoute(pointLatLngs, "best-route")
             {
                 Stroke = new Pen(Color.Red, 3)
+                
             };
             if (Program.RouteOverlay.Routes.Contains(Route))
             {
@@ -76,6 +77,7 @@ namespace Cargo_Distributed_System
             }
 
             Program.RouteOverlay.Routes.Add(Route);
+            
         }
 
         private void NearestNeighbor()

@@ -85,12 +85,13 @@ namespace Cargo_Distributed_System
             // 
             // insertAddressButton
             // 
-            this.insertAddressButton.Location = new System.Drawing.Point(667, 162);
+            this.insertAddressButton.BackColor = System.Drawing.SystemColors.GrayText;
+            this.insertAddressButton.Location = new System.Drawing.Point(661, 162);
             this.insertAddressButton.Name = "insertAddressButton";
-            this.insertAddressButton.Size = new System.Drawing.Size(123, 23);
+            this.insertAddressButton.Size = new System.Drawing.Size(129, 23);
             this.insertAddressButton.TabIndex = 3;
             this.insertAddressButton.Text = "Insert Address";
-            this.insertAddressButton.UseVisualStyleBackColor = true;
+            this.insertAddressButton.UseVisualStyleBackColor = false;
             this.insertAddressButton.Click += new System.EventHandler(this.InsertAddressButton_Click);
             // 
             // AddressInputBox
@@ -105,21 +106,22 @@ namespace Cargo_Distributed_System
             // 
             // addressLabel
             // 
-            this.addressLabel.AutoSize = true;
             this.addressLabel.Location = new System.Drawing.Point(519, 9);
             this.addressLabel.Name = "addressLabel";
-            this.addressLabel.Size = new System.Drawing.Size(45, 13);
+            this.addressLabel.Size = new System.Drawing.Size(271, 13);
             this.addressLabel.TabIndex = 5;
             this.addressLabel.Text = "Address";
+            this.addressLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.GrayText;
             this.button1.Location = new System.Drawing.Point(522, 162);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 23);
+            this.button1.Size = new System.Drawing.Size(129, 23);
             this.button1.TabIndex = 6;
             this.button1.Text = "Calculate Shorthest Path";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.CalculateShorthestPathButton);
             // 
             // DeliveryAdressScreenForm

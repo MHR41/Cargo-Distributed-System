@@ -47,7 +47,7 @@ namespace Cargo_Distributed_System
         private void InsertAddressButton_Click(object sender, EventArgs e)
         {
             // Inserts properly don't remove until end so we dont waste api free useage
-            return;
+           // return;
             var address = AddressInputBox.Text;
             var point = gmap.GeocodingProvider.GetPoint(address, out GeoCoderStatusCode status);
             if (status != GeoCoderStatusCode.OK)
@@ -77,5 +77,6 @@ namespace Cargo_Distributed_System
         {
             Program.tspCalculator.Resume();
         }
+
     }
 }
